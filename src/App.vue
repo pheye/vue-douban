@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "normalize.css/normalize.css";
 
 @function px2rem($px) {
   @return ($px / 75) + rem;
@@ -35,6 +34,7 @@ a {
     color: $--color-primary;
   }
 }
+
 ul {
   li {
     list-style: none;

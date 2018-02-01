@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <router-view/>
+      <router-view/>
+      <router-view class="view" name="search"></router-view>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import '@/assets/theme/index.css'
 
 Vue.use(ElementUI)
 
@@ -16,15 +17,32 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import "normalize.css/normalize.css";
 
+@function px2rem($px) {
+  @return ($px / 75) + rem;
+}
+
+html {
+  font-size: calc(100vw / 7.5);
+}
+
+a {
+  text-decoration: none;
+  font-size: $--font-size-base;
+  &:hover {
+    color: $--color-primary;
+  }
+}
+ul {
+  li {
+    list-style: none;
+  }
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
 }
 </style>

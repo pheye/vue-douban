@@ -2,7 +2,7 @@
 <div id="my-home">
   <my-sub-nav></my-sub-nav>
   <div class="my-home-list">
-    <my-activity v-for="(item, index) in activities.data" :key="index" :src="item">
+    <my-activity v-for="(item, index) in activities.data" :key="index" :item="item">
     </my-activity>
   </div>
   <infinite-loading @infinite="handleLoading">

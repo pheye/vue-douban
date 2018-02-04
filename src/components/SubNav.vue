@@ -9,7 +9,7 @@
     <el-row>
       <el-col>
         <el-button type="default">注册帐号</el-button>
-        <el-button type="default">登陆豆瓣</el-button>
+        <router-link :to="{name: 'Login'}" replace class="my-subnav-btn">登录豆瓣</router-link>
       </el-col>
     </el-row>
   </div>

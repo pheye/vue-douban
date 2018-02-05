@@ -40,11 +40,17 @@ const mutations = {
       total
     }
   },
-  [`${QUERY_EVENT}_FAILED`] (state, payload) {
+  [`${QUERY_EVENT}_REJECTED`] (state, payload) {
     state.loading = false
   },
-  [`${QUERY_EVENT}_FULFILLED`] (state, payload) {
+  [`${GET_EVENT}_PENDING`] (state, payload) {
+    state.loading = true
+  },
+  [`${GET_EVENT}_FULFILLED`] (state, payload) {
     state.currentItem = payload.data
+  },
+  [`${GET_EVENT}_REJECTED`] (state, payload) {
+    state.loading = false
   }
 }
 

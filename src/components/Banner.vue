@@ -13,7 +13,9 @@
         <img src="../assets/promotion_bg.jpg" alt="cover">
       </div>
       <div class="content">
-        <span class="title">{{title}}</span>
+        <div>
+          <span class="title">{{title}}</span>
+        </div>
         <div class="button-wrapper">
           <span class="download">极速下载</span>
           <span class="open">打开</span>
@@ -48,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 .banner {
   position: relative;
-  height: 8rem;
+  height: px2rem(160);
 
   img {
     max-width: 100%;
@@ -73,30 +75,30 @@ export default {
 
 .content {
   position: absolute;
-  right: 1rem;
-  left: 1.8rem;
+  right: px2rem(10);
+  left: px2rem(18);
   display: flex;
-  height: 8rem;
+  height: px2rem(80);
   justify-content: space-between;
   align-items: center;
 
   .title {
-    padding-left: 1.8rem;
-    font-size: 1.4rem;
+    padding-left: 0.2rem;
+    font-size: $--font-size-base;
     font-weight: normal;
-    line-height: 2.2rem;
+    line-height: px2rem(22);
     color: #2CA532;
   }
 
   .download, .open {
     display: inline-block;
     width: auto;
-    padding: 0 1.4rem;
-    font-size: 1.3rem;
+    padding: 0 0.2rem;
+    font-size: 16px;
     font-weight: bold;
-    line-height: 2;
-    border: 0.1rem solid #42bd56;
-    border-radius: 0.3rem;
+    line-height: 20px;
+    border: 1px solid #42bd56;
+    border-radius: 4px;
   }
 
   .download {

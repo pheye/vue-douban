@@ -19,14 +19,13 @@ export default {
 
 <style lang="scss">
 
-@function px2rem($px) {
-  @return ($px / 75) + rem;
-}
-
 html {
   font-size: calc(100vw / 7.5);
 }
 
+body {
+  font-size: $--font-size-base;
+}
 a {
   text-decoration: none;
   font-size: $--font-size-base;

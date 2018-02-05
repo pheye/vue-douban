@@ -7,7 +7,7 @@
         <el-tag type="success">{{eventItem.loc_name}}</el-tag>
       </h3>
       <div class="detail-poster">
-        <img :src="eventItem.image_hlarge" alt="">
+        <img v-lazy="eventItem.image_hlarge" alt="">
       </div>
       <div class="detail-detail">
         <span>时间:&nbsp;&nbsp;</span>
@@ -45,7 +45,7 @@
       </div>
       <div class="detail-desc">
         <h4 class="detail-desc__title" >活动详情</h4>
-        <div v-if="eventItem.content" class="detail-desc__content" v-html="eventItem.content"></div>
+        <div v-if="eventItem.content" class="detail-desc__content" v-html="content"></div>
       </div>
     </div>
     <my-download-app></my-download-app>
@@ -77,6 +77,9 @@ export default {
         return []
       }
       return this.toArray(item.tags)
+    },
+    content () {
+      return this.eventItem.content.replace(/(<img.+)src=(".+?")(.+?>)/ig, '$1v-lazy=$2$3')
     }
   },
   methods: {
@@ -105,6 +108,7 @@ export default {
   .detail-poster {
     max-width: 90%;
     margin: 0 auto;
+    text-align: center;
     img {
       max-width: 100%;
     }

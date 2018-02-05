@@ -9,8 +9,12 @@
 import Vue from 'vue'
 import ElementUI from 'element-ui'
 import '@/assets/theme/index.css'
-
+import VueLazyload from 'vue-lazyload'
+import url from '@/assets/loading_green.gif'
 Vue.use(ElementUI)
+Vue.use(VueLazyload, {
+  loading: url
+})
 
 export default {
   name: 'App'
@@ -26,6 +30,7 @@ html {
 body {
   font-size: $--font-size-base;
 }
+
 a {
   text-decoration: none;
   font-size: $--font-size-base;

@@ -7,7 +7,7 @@
           <p>{{item.content | subStr}}</p>
         </el-col>
         <el-col :span="6" class="my-activity-content__right">
-          <img :src="item.image_hlarge" alt="cover">
+          <img v-lazy="item.image_hlarge" alt="cover">
         </el-col>
       </el-row>
       <el-row type="flex" class="my-activity-author">

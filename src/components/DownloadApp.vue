@@ -20,17 +20,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .download-app {
-  padding: 0 0 2rem 0;
-  margin-top: px2rem(50);
-  margin-bottom: px2rem(30);
+  padding: 0 0 px2rem(40) 0;
+  margin-top: px2rem(100);
+  margin-bottom: px2rem(60);
   text-align: center;
   font-size: 28px;
 }
 
 .info {
-  margin: 0 auto px2rem(15);
+  margin: 0 auto px2rem(30);
   overflow: hidden;
   text-align: left;
   font-size: 24px;
@@ -40,9 +40,9 @@ export default {
 
 img {
   float: left;
-  width: 4.8rem;
-  height: 4.8rem;
-  margin-right: 1.2rem;
+  width: px2rem(96);
+  height: px2rem(96);
+  margin-right: px2rem(24);
 }
 
 .info-content {
@@ -52,7 +52,7 @@ img {
 strong {
   font-size: 30px;
   font-weight: normal;
-  line-height: px2rem(28);
+  line-height: px2rem(56);
 }
 
 .download-app a:last-child {

@@ -8,6 +8,8 @@ import Group from '@/pages/Group'
 import Broadcast from '@/pages/Broadcast'
 import ActivityDetail from '@/pages/ActivityDetail'
 import Login from '@/pages/Login'
+import Register from '@/pages/Register'
+import Status from '@/pages/Status'
 
 Vue.use(Router)
 
@@ -54,6 +56,16 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/register',
+      name: 'Register',
+      component: Register
+    },
+    {
+      path: '/status',
+      name: 'Status',
+      component: Status
     }
   ]
 })

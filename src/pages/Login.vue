@@ -8,25 +8,55 @@
         <h3>登录豆瓣</h3>
       </el-col>
     </el-row>
-    <el-form @submit.native.prevent class="my-login-form">
-      <el-form-item>
+    <el-form @submit.native.prevent class="my-login-form" :rules="rules" :model="form" ref="form">
+      <el-form-item prop="email">
         <el-input v-model="form.email" placeholder="邮箱"></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item prop="password">
         <el-input type="password" v-model="form.password" auto-complete="off" placeholder="密码"></el-input>
       </el-form-item>
-      <el-button type="primary" @click="submitForm('ruleForm2')" size="medium" class="my-login-form__submit">登陆</el-button>
+      <el-button type="primary" @click="submitForm('form')" size="medium" class="my-login-form__submit" :disabled="!valid">登陆</el-button>
     </el-form>
   </div>
 </template>
 <script>
+import AsyncValidator from 'async-validator'
+
 export default {
   data: () => ({
     form: {
       email: '',
       password: ''
+    },
+    rules: {
+      email: [
+        {required: true, message: 'E-mail不能为空', trigger: 'blur'}
+      ],
+      password: [
+        {required: true, message: '密码不能为空', trigger: 'blur'},
+        {min: 6, max: 30, message: '密码长度应在6~30之间', trigger: 'change'}
+      ]
     }
-  })
+  }),
+  computed: {
+    valid: function () {
+      let validator = new AsyncValidator(this.rules)
+      let result = false
+      validator.validate(this.form, errors => {
+        if (!errors) {
+          result = true
+        }
+      })
+      return result
+    }
+  },
+  methods: {
+    submitForm (name) {
+      this.$refs[name].validate(valid => {
+        console.log('valid:', valid)
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

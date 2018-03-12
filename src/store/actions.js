@@ -1,5 +1,6 @@
 export const QUERY_EVENT = 'QUERY_EVENT'
 export const GET_EVENT = 'GET_EVENT'
+export const QUERY_MOVIE = 'QUERY_MOVIE'
 
 export const createAsyncAction = (type, fn) => async ({commit, state}, payload) => {
   commit({
@@ -16,7 +17,7 @@ export const createAsyncAction = (type, fn) => async ({commit, state}, payload) 
     return res.data
   } catch (e) {
     commit({
-      type: `${type}_FAILED`,
+      type: `${type}_REJECTED`,
       params: payload
     })
     throw e

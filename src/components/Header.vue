@@ -9,16 +9,16 @@
       <el-col :span="12" class="my-header-menu">
         <el-row type="flex" align="middle" justify="end">
           <el-col>
-            <router-link style="color: #2384E8" :to="{name: 'movies'}">电影</router-link>
+            <router-link style="color: #2384E8" :to="{name: 'Movie'}">电影</router-link>
           </el-col>
           <el-col>
-            <router-link style="color: #9F7860" :to="{name: 'books'}">图书</router-link>
+            <router-link style="color: #9F7860" :to="{name: 'Book'}">图书</router-link>
           </el-col>
           <el-col>
-            <router-link style="color: #E4A813" :to="{name: 'broacasts'}">广播</router-link>
+            <router-link style="color: #E4A813" :to="{name: 'Broadcast'}">广播</router-link>
           </el-col>
           <el-col>
-            <router-link style="color: #2AB8CC" :to="{name: 'groups'}">小组</router-link>
+            <router-link style="color: #2AB8CC" :to="{name: 'Group'}">小组</router-link>
           </el-col>
         </el-row>
       </el-col>

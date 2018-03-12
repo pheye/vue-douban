@@ -131,6 +131,9 @@ export default {
       object {
         max-width: 100%;
       }
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
